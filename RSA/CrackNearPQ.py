@@ -1,8 +1,15 @@
 #!/usr/bin/env python2
+#coding=utf-8
 from gmpy2 import iroot, is_prime
 
 
 class CrackNearPQ:
+    """
+    这个类用于分解两个相近的素数的乘积
+
+    :param n: 两个素数的乘积, RSA 系统的参数
+    :return p,q: n 的两个素数因子，前者小于后者
+    """
     def __init__(self, n):
         self.n, self.p, self.q = n, 0, 0
 
