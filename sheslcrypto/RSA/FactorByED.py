@@ -16,10 +16,10 @@ class FactorByED:
         while True:
             pmone = powmod(m, t, self.n)
             p_or_q= gcd(pmone - 1, self.n)
-            if p_or_q != 1:
+            if p_or_q != 1 and p_or_q != self.n:
                 return p_or_q, self.n / p_or_q
             p_or_q = gcd(pmone + 1, self.n)
-            if p_or_q != 1:
+            if p_or_q != 1 and p_or_q != self.n:
                 return p_or_q, self.n / p_or_q
             if t%2 == 0: t /= 2
             else: return None
@@ -28,8 +28,9 @@ class FactorByED:
         while True:
             m = randint(0, self.n)
             res = self.factor_by_m(m)
-            if res:
-                return res if res[0] < res[1] else res[::-1]
+            if res is None: continue
+            assert res[0] * res[1] == self.n
+            return res if res[0] < res[1] else res[::-1]
 
 if __name__ == "__main__":
     e, d, n = 3, 12, 35
