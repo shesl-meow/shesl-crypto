@@ -6,16 +6,16 @@ from gmpy2 import iroot, gcd, powmod
 class CrackSmallE:
     """
     这个类用于 RSA 系统的加密指数比较小的时候
-
-    :param c: RSA 系统的密文
-    :param e: RSA 系统的指数，要求这个 e 比较小
-        如果指数较大，破解只会陷入高时间复杂度中而不会报错
-    :param n: RSA 系统中的模数，一般是两个素数的积
-    :param phi: n 的欧拉函数，如果提供了欧拉函数，则会检测方程是否有解
-
     :return m: 调用 crack() 函数进行爆破，返回明文
     """
     def __init__(self, c, e, n, phi=None):
+        """
+        :param c: RSA 系统的密文
+        :param e: RSA 系统的指数，要求这个 e 比较小
+            如果指数较大，破解只会陷入高时间复杂度中而不会报错
+        :param n: RSA 系统中的模数，一般是两个素数的积
+        :param phi: n 的欧拉函数，如果提供了欧拉函数，则会检测方程是否有解
+        """
         self.c, self.e, self.n, self.phi = c, e, n, phi
 
     def check_remainder(self):

@@ -21,6 +21,7 @@ class FactorByPHighBits:
     def factorization(self):
         """
         对传入的整数 n 进行分解。
+
         :return:返回两个素数 p,q，前者小于后者
         """
         x = self.PR.gen()
