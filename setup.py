@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 setup(
     name="sheslcrypto",
-    version="1.2",
+    version="1.3",
     description="Python wrapper for crypto package.",
     author="shesl-meow",
     author_email="shesl-meow@qq.com",
